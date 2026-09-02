@@ -1,0 +1,18 @@
+{
+  "version": 7,
+  "configurePresets": [
+    {
+      "name": "base",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install",
+        "CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+      }
+    },
+    {
+      "name": "child",
+      "inherits": "base"
+    }
+  ]
+}

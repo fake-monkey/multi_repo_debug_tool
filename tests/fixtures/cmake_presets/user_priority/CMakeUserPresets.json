@@ -1,0 +1,14 @@
+{
+  "version": 7,
+  "configurePresets": [
+    {
+      "name": "user-candidate",
+      "inherits": "shared-base",
+      "binaryDir": "${sourceDir}/build/user"
+    },
+    {
+      "name": "multi_repo_dev_config",
+      "inherits": "shared-base"
+    }
+  ]
+}

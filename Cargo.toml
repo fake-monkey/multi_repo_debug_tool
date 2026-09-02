@@ -1,0 +1,33 @@
+[package]
+name = "repo_debug"
+version = "1.2.1-alpha.1"
+edition = "2024"
+
+[dependencies]
+chardet = "0.2"
+clap = { version = "4", features = ["derive"] }
+clap_complete = "4.5"
+dialoguer = "0.12"
+encoding_rs = "0.8"
+path-absolutize = "3"
+pathdiff = "0.2"
+petgraph = "0.8"
+regex = "1"
+roxmltree = "0.20"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "fast-rng", "v5"] }
+walkdir = "2"
+log = "0.4"
+anyhow = "1"
+colored = "3"
+git2 = "0.20"
+thiserror = "2"
+diag-trace = { workspace = true }
+job-guard = { workspace = true }
+unified-access = { workspace = true }
+vs-clang-power-tools = { workspace = true }
+git_tool = { workspace = true }
+
+[build-dependencies]
+winres = "0.1"
