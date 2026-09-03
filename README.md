@@ -11,6 +11,28 @@
 - 支持合并多个仓库的 `.sln`，便于单窗口调试
 - 支持 `each` 子命令对所有参与仓库批量执行同一命令
 
+## Scoop 安装与更新
+
+首次发布为 alpha 通道。添加本仓库 bucket 并安装：
+
+```powershell
+scoop bucket add repo_debug https://github.com/fake-monkey/multi_repo_debug_tool.git
+scoop install repo_debug/repo_debug-alpha
+repo_debug --version
+```
+
+后续更新 alpha：
+
+```powershell
+scoop update
+scoop update repo_debug-alpha
+repo_debug --version
+```
+
+未来 stable 通道发布后，使用 `repo_debug/repo_debug` 安装；stable 和 alpha 都暴露同一个 `repo_debug` 命令。两条通道均已安装时，可执行 `scoop reset repo_debug` 或 `scoop reset repo_debug-alpha` 切换当前生效通道。
+
+Scoop 默认保留升级前的版本。需要回退时先用 `scoop info repo_debug-alpha` 查看本机版本，再执行 `scoop reset repo_debug-alpha@<version>`。不要在仍需回退时执行 cleanup。
+
 ## 1. 使用前自检
 
 - 执行环境为 Windows（当前实现基于 Windows/VS 工具链假设）。

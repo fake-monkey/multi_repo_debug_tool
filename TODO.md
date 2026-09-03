@@ -67,13 +67,15 @@
 
 **注意**: 与第 4 项联动，重命名时必须同步补好这里的提示。
 
-## 6. 打包更新（待定，视情况而定）
+## 6. 打包与分发流程
 
-**状态**: 待定。
+**状态**: 已完成。
 
-是否跟进打包/分发方式更新视情况而定，例如：
+CLI 的打包与分发方案已经落地，完整约定见 [发布方案.md](docs/发布方案.md)：
 
-- 根 Cargo workspace 化后，`repo_debug` 的发布与安装方式是否需要调整。
-- 桌面端（`desktop` + Tauri）引入后的发布产物是否纳入同一套打包流程。
+- `scripts/publish_release.py` 从根 Cargo workspace 构建 Windows release 产物，并生成确定性 ZIP 和 SHA256。
+- 本子仓库同时作为 Scoop bucket，manifest 固定维护在 `bucket/` 目录。
+- 通过 GitHub Release 分发产物，并提供相互独立的 `repo_debug` stable 与 `repo_debug-alpha` 更新通道。
+- 正式发布前检查版本号、Git 标签和 GitHub Release，禁止直接覆盖已经发布的版本。
 
-暂不定义具体方案，先在此占位。
+桌面端（`desktop` + Tauri）尚未实现，其发布产物是否并入这套流程由桌面端任务另行决定，不影响本项 CLI 发布工作的完成状态。

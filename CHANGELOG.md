@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1-alpha.1]
+
+### Added
+
+- 增加基于 Python 和 GitHub CLI 的 GitHub Release 发布程序，自动完成 release 构建、ZIP 打包、SHA256 计算、alpha Scoop manifest 生成以及 Release 附件上传。
+- 建立 `repo_debug` stable 与 `repo_debug-alpha` 预发布通道约定；首个 alpha 版本通过 `repo_debug-alpha` manifest 分发。
+
 ## [1.2.0]
 
 ### Added
