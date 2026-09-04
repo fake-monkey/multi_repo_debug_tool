@@ -11,12 +11,23 @@
 - 支持合并多个仓库的 `.sln`，便于单窗口调试
 - 支持 `each` 子命令对所有参与仓库批量执行同一命令
 
-## Scoop 安装与更新
+## 安装和更新
 
-首次发布为 alpha 通道。添加本仓库 bucket 并安装：
+### 安装 Scoop 并添加本仓库 Bucket
+
+这是**一次性**初始化安装器，只需在普通用户 PowerShell 中执行一次：
 
 ```powershell
-scoop bucket add repo_debug https://github.com/fake-monkey/multi_repo_debug_tool.git
+irm 'https://raw.githubusercontent.com/fake-monkey/multi_repo_debug_tool/master/scripts/init_scoop.ps1' | iex
+```
+
+脚本会按需安装 Scoop、刷新当前终端的 `PATH`，并添加或验证本仓库的 `repo_debug` bucket。
+
+### 安装和更新 repo_debug
+
+首次发布为 alpha 通道。安装并检查版本：
+
+```powershell
 scoop install repo_debug/repo_debug-alpha
 repo_debug --version
 ```
@@ -24,7 +35,6 @@ repo_debug --version
 后续更新 alpha：
 
 ```powershell
-scoop update
 scoop update repo_debug-alpha
 repo_debug --version
 ```

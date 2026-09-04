@@ -167,5 +167,5 @@ try {
 }
 catch {
     [Console]::Error.WriteLine("ERROR: $($_.Exception.Message)")
-    exit 1
+    throw
 }
