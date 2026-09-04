@@ -13,6 +13,8 @@
 
 ## 安装和更新
 
+由于需要访问GitHub，初始化scoop和后续安装升级repo_debug都需要正确配置VPN代理，否则都有可能失败。
+
 ### 安装 Scoop 并添加本仓库 Bucket
 
 这是**一次性**初始化安装器，只需在普通用户 PowerShell 中执行一次：
