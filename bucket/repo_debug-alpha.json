@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/fake-monkey/multi_repo_debug_tool/releases/download/v1.2.1-alpha.1/repo_debug-v1.2.1-alpha.1-x86_64-pc-windows-msvc.zip",
-      "hash": "33b6e86583109e96f62b13585ac5ae109dc092ea25327dc62936dd4f943d5d75"
+      "hash": "87d757e4563c9a974329beed78831f13a0c0c55d9ce4721d2f344ea2e725ec4e"
     }
   },
   "bin": "repo_debug.exe",
