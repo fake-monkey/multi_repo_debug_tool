@@ -45,6 +45,19 @@ repo_debug --version
 
 Scoop 默认保留升级前的版本。需要回退时先用 `scoop info repo_debug-alpha` 查看本机版本，再执行 `scoop reset repo_debug-alpha@<version>`。不要在仍需回退时执行 cleanup。
 
+## 维护者发布
+
+外发统一使用 toolbox 的 `rust-release` npm 工具。在 toolbox 根目录执行 `pnpm --filter rust-release run install:global` 安装隔离副本，然后在本项目目录执行：
+
+```powershell
+rust-release publish --dry-run
+rust-release publish
+```
+
+需要 Node.js 24、Cargo、Git、已登录的 GitHub CLI 和 MSVC 构建环境。dry-run 与正式发布执行相同的认证、仓库同步、版本占用、构建打包及 manifest 检查，只在发布写入前结束；已发布版本或未提交改动也会阻止 dry-run。
+
+正式发布在源码提交上创建标签并上传、复核附件，再提交和推送 Scoop manifest。失败保留现场，不自动覆盖或续传。具体约定见[发布方案](docs/发布方案.md)。
+
 ## 1. 使用前自检
 
 - 执行环境为 Windows（当前实现基于 Windows/VS 工具链假设）。
